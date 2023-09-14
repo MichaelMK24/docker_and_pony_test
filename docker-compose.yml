@@ -1,0 +1,27 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+#    command: python repositoryy/repository_user.py
+    volumes:
+      - ./:/app
+    depends_on:
+      - database
+    networks:
+      - mynetwork
+
+  database:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Admin24
+      POSTGRES_DB: 20_05AQA_Group
+    ports:
+      - "5432:5432"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
