@@ -4,7 +4,6 @@ sys.path.append("/app")
 from models.base_model import UserM, CarM
 
 
-
 class UserRepo:
 
     def __init__(self):
